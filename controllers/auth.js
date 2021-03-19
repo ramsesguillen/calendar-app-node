@@ -103,6 +103,8 @@ const revalidarUsuario = async( req, res = response ) => {
 
     res.json({
         ok: true,
+        name,
+        uid,
         token
     })
 }
