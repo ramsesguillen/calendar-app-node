@@ -34,8 +34,8 @@ const crearEvento = async( req, res = response ) => {
         evento.usuario = req.uid;
         const eventoGuardado = await evento.save();
         return res.status(201).json({
-            ok: false,
-            eventoGuardado
+            ok: true,
+            evento: eventoGuardado
         });
     } catch (error) {
         return res.status(500).json({
@@ -79,7 +79,7 @@ const actualizarEvento = async( req, res = response ) => {
 
         return res.json({
             ok: true,
-            eventoActualizado
+            evento: eventoActualizado
         });
     } catch (error) {
         return res.status(500).json({
